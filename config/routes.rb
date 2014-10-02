@@ -1,4 +1,7 @@
 Fantasyraid::Application.routes.draw do
+  resources :auth_sessions
+
+
   resources :users
 
 

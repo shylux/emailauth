@@ -1,0 +1,31 @@
+<h1>Listing auth_sessions</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Token</th>
+    <th>Active</th>
+    <th>User agent</th>
+    <th>Last ip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @auth_sessions.each do |auth_session| %>
+  <tr>
+    <td><%= auth_session.user_id %></td>
+    <td><%= auth_session.token %></td>
+    <td><%= auth_session.active %></td>
+    <td><%= auth_session.user_agent %></td>
+    <td><%= auth_session.last_ip %></td>
+    <td><%= link_to 'Show', auth_session %></td>
+    <td><%= link_to 'Edit', edit_auth_session_path(auth_session) %></td>
+    <td><%= link_to 'Destroy', auth_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auth session', new_auth_session_path %>

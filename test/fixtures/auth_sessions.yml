@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  token: MyString
+  active: false
+  user_agent: MyString
+  last_ip: MyString
+
+two:
+  user_id: 1
+  token: MyString
+  active: false
+  user_agent: MyString
+  last_ip: MyString
