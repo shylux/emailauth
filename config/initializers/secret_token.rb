@@ -4,4 +4,19 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Fantasyraid::Application.config.secret_token = '9594df74db6263dc68849311c0c2bbc3dc79aa2601d552b0d10dcaf20b07456c48b5e89df748745bb79c341097b33eedfb1cc4d7196586058ab2f0d1194db55d'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Fantasyraid::Application.config.secret_token = secure_token
