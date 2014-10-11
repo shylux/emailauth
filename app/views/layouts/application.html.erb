@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <%= link_to "FantasyRush", users_path, class: 'navbar-brand' %>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
