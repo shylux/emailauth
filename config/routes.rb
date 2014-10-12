@@ -1,5 +1,7 @@
 Fantasyraid::Application.routes.draw do
-  get "static_pages/home"
+  root :to => 'static_pages#home'
+
+  match '/home', to: 'static_pages#home', via: 'get'
 
   get "static_pages/help"
 
