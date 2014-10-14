@@ -2,6 +2,7 @@ Fantasyraid::Application.routes.draw do
   root :to => 'static_pages#home'
 
   match '/home', to: 'static_pages#home', via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
 
   get "static_pages/help"
 
