@@ -44,7 +44,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        AuthenticationMailer.login_email(@user).deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
@@ -68,6 +67,16 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def request_login
+    @user = User.find_by_name params[:username]
+    if @user.nil?
+      flash[:notice] = "User not found."
+      return
+    end
+    AuthenticationMailer.login_email(@user).deliver
+    redirect_to action: "index"
   end
 
   # DELETE /users/1

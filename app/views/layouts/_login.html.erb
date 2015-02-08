@@ -1,8 +1,10 @@
 <div class="navbar-right navbar-form">
-  <div class="input-group input-group-sm">
-    <input type="text" name="username" class="form-control" placeholder="Username">
-    <span class="input-group-btn">
-      <input class="btn btn-default" type="submit" value="Login">
-    </span>
-  </div>
+  <%= form_tag("/login", method: "post") do %>
+    <div class="input-group input-group-sm">
+      <%= text_field_tag :username, nil, class: 'form-control', placeholder: 'Username' %>
+      <span class="input-group-btn">
+        <%= submit_tag "Request Login", class: 'btn btn-default' %>
+      </span>
+    </div>
+  <% end %>
 </div>
