@@ -1,0 +1,11 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <%= link_to "FantasyRush", home_path, class: 'navbar-brand' %>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to 'Register', signup_path %>
+      </li>
+    </ul>
+    <%= render 'layouts/login' %>
+  </div>
+</nav>

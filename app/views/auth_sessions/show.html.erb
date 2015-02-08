@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @auth_session.user_id %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%= @auth_session.token %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @auth_session.active %>
+</p>
+
+<p>
+  <b>User agent:</b>
+  <%= @auth_session.user_agent %>
+</p>
+
+<p>
+  <b>Last ip:</b>
+  <%= @auth_session.last_ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_auth_session_path(@auth_session) %> |
+<%= link_to 'Back', auth_sessions_path %>
